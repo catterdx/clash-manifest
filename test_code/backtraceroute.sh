@@ -21,7 +21,12 @@ backtraceroute()
 	mtrback "111.48.26.136 " "Wuhan CM"
 	mtrback "113.57.249.2 " Wuhan CU"
         mtrback "113.59.224.1" "Beijing CT"
+        mtrback "123.125.99.1" "Beijing CU"
+        mtrback "211.136.25.153" "Beijing CM"
 	mtrback "14.215.116.1" "Guangzhou CT"
         mtrback "122.13.195.129" "Guangzhou CU"
 	mtrback "120.237.53.17" "Guangzhou CM"
+	mtrback "58.32.0.1" "Shanghai CT"
+	mtrback "223.166.94.126" "Shanghai CU"
+	mtrback "221.183.55.22" "Shanghai CM"
 }
