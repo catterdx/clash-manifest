@@ -72,5 +72,5 @@ else
 	echo "log update to 91yuntest.log"
 fi
 #删除目录
-rm -rf ${dir}/91yuntest
+rm -rf ${dir}/91test
 
