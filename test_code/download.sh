@@ -15,7 +15,7 @@ speed_test() {
 
 download()
 {
-	echo "===开始测试下载速度===">>${dir}/$logfilename
+	echo "=== Download test===">>${dir}/$logfilename
 	next
 	echo "===star ipv4 download===">>${dir}/$logfilename
 	echo -e "Node Name\t\t\tIPv4 address\t\tDownload Speed" | tee -a ${dir}/$logfilename
