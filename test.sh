@@ -52,7 +52,7 @@ arr=(${_included_benchmarks//,/ })
 for i in ${arr[@]}    
 do 
 	wget -q --no-check-certificate https://raw.githubusercontent.com/catterdx/91test/master/test_code/${i}.sh
-    . ${dir}/91test/${i}.sh
+    . ${dir}/91yuntest/${i}.sh
 	eval ${i}
 done    
 
