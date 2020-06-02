@@ -29,7 +29,7 @@ chinabw()
     printf "%-18s%-18s%-20s%-12s\n" " Node Name" "Upload Speed" "Download Speed" "Latency"
     cbw '3633' 'Shanghai CT'
     cbw '27377' 'Beijing CT 5G'
-    cbw '23844' 'Wuhan CT'
+    cbw '29353' 'Wuhan CT'
     cbw '27594' 'Guangzhou CT 5G'
     cbw '21005' 'Shanghai CU'
     cbw '5145' 'Beijing CU'
