@@ -2,9 +2,9 @@
 PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin
 export PATH
 
-echo "服务器提供商（host provider）[default:Enter]"
+echo "host provider [default:Enter]"
 read hostp
-echo "开始测试中，会需要点时间，请稍后"
+echo " collect information "
 #===============================以下是各类要用到的函数========================================
 #teddey的besh测试网络下载和IO用到的
 get_opsy() {
@@ -60,27 +60,27 @@ io_test() {
 mtrgo(){
 	mtrurl=$1
 	nodename=$2
-	echo "===测试 [$nodename] 到这台服务器的路由===" | tee -a $logfilename
+	echo "===test [$nodename] route to this host===" | tee -a $logfilename
 	mtrgostr=$(curl -s "$mtrurl")
 	#echo $mtrgostr >> $logfilename
 	echo $mtrgostr > mtrlog.log
 	mtrgostrback=$(curl -s -d @mtrlog.log "http://logfileupload.91yuntest.com/traceroute.php")
 	rm -rf mtrlog.log
 	echo -e $mtrgostrback | awk -F '^' '{printf("%-2s\t%-16s\t%-35s\t%-30s\t%-25s\n",$1,$2,$3,$4,$5)}' | tee -a $logfilename
-	echo -e "=== [$nodename] 路由测试结束===\n\n" | tee -a $logfilename	
+	echo -e "=== [$nodename] Done===\n\n" | tee -a $logfilename	
 }
 
 #测试回程路由
 mtrback(){
-	echo "===测试 [$2] 的回程路由===" | tee -a $logfilename
+	echo "===test [$2] backtrace route===" | tee -a $logfilename
 	mtr -r -c 10 $1 | tee -a $logfilename
-	echo -e "===回程 [$2] 路由测试结束===\n\n" | tee -a $logfilename	
+	echo -e "===backtrace route [$2] done===\n\n" | tee -a $logfilename	
 
 }
 
 #测试全国ping值
 ping_test(){
-	echo "===开始进行全国PING测试===" | tee -a $logfilename
+	echo "=== ALL CN PING Test===" | tee -a $logfilename
 	pingurl="http://www.ipip.net/ping.php?a=send&host=$1&area%5B%5D=china"
 	pingstr=$(curl -s "$pingurl")
 	#echo $pingstr >> $logfilename
@@ -94,7 +94,7 @@ ping_test(){
 	echo "===ping show===" >> $logfilename
 	echo -e $pingstrback | awk -F '^' '{printf("%-10s\t%-10s\t%-30s\t%-10s\t%-30s\t%-30s\t%-30s\n",$1,$2,$3,$4,$5,$6,$7)}' | tee -a $logfilename
 	echo -e "===ping show end===\n\n" >> $logfilename
-	echo "===进行全国PING测试结束===" | tee -a $logfilename
+	echo "=== Done ===" | tee -a $logfilename
 	
 }
 
@@ -177,10 +177,10 @@ systeminfo()
 {
 
 	#覆盖已有文件
-	echo "====开始记录测试信息====" > $logfilename
+	echo "====Record information====" > $logfilename
 
 	#把系统信息写入日志文件
-	echo "===系统基本信息===" | tee -a $logfilename
+	echo "===system information===" | tee -a $logfilename
 	echo "CPU:$cname" | tee -a $logfilename
 	echo "cores:$cores" | tee -a $logfilename
 	echo "freq:$freq" | tee -a $logfilename
@@ -210,10 +210,10 @@ bdtest()
 		apt-get update
 		apt-get -y install python
 	fi
-	echo "===开始测试带宽===" | tee -a $logfilename
+	echo "=== Bandwidth start ===" | tee -a $logfilename
 	wget --no-check-certificate https://raw.githubusercontent.com/91yun/speedtest-cli/master/speedtest_cli.py 1>/dev/null 2>&1
 	python speedtest_cli.py --share | tee -a $logfilename
-	echo -e "===带宽测试结束==\n\n" | tee -a $logfilename
+	echo -e "=== Bandwidth done ==\n\n" | tee -a $logfilename
 	rm -rf speedtest_cli.py
 }
 
@@ -221,7 +221,7 @@ bdtest()
 #下载测试
 dltest()
 {
-	echo "===开始测试下载速度===" | tee -a $logfilename
+	echo "=== Download test ===" | tee -a $logfilename
 	next
 	if  [ -e '/usr/bin/wget' ]; then
 		echo -e "Node Name\t\t\tIPv4 address\t\tDownload Speed" | tee -a $logfilename
@@ -238,7 +238,7 @@ dltest()
 #IO测试
 iotest()
 {
-	echo "===开始测试IO性能===" | tee -a $logfilename
+	echo "===Start IO test ===" | tee -a $logfilename
 	io1=$( io_test )
 	io2=$( io_test )
 	io3=$( io_test )
@@ -261,24 +261,24 @@ iotest()
 #开始测试来的路由
 tracetest()
 {
-	mtrgo "http://www.ipip.net/traceroute.php?as=1&a=get&n=1&id=274&ip=$IP" "广州电信（天翼云）"
-	mtrgo "http://www.ipip.net/traceroute.php?as=1&a=get&n=1&id=100&ip=$IP" "上海电信（天翼云）"
-	mtrgo "http://www.ipip.net/traceroute.php?as=1&a=get&n=1&id=20&ip=$IP" "厦门电信CN2"
-	mtrgo "http://www.ipip.net/traceroute.php?as=1&a=get&n=1&id=12&ip=$IP" "重庆联通"
-	mtrgo "http://www.ipip.net/traceroute.php?as=1&a=get&n=1&id=356&ip=$IP" "上海移动"
-	mtrgo "http://www.ipip.net/traceroute.php?as=1&a=get&n=1&id=160&ip=$IP" "北京教育网"
+	mtrgo "http://www.ipip.net/traceroute.php?as=1&a=get&n=1&id=274&ip=$IP" "Guangzhou CT"
+	mtrgo "http://www.ipip.net/traceroute.php?as=1&a=get&n=1&id=100&ip=$IP" "Shanghai CT"
+	mtrgo "http://www.ipip.net/traceroute.php?as=1&a=get&n=1&id=20&ip=$IP" "Xiemmen CN2"
+	mtrgo "http://www.ipip.net/traceroute.php?as=1&a=get&n=1&id=12&ip=$IP" "Chongqing CU"
+	mtrgo "http://www.ipip.net/traceroute.php?as=1&a=get&n=1&id=356&ip=$IP" "Shanghai CM"
+	mtrgo "http://www.ipip.net/traceroute.php?as=1&a=get&n=1&id=160&ip=$IP" "Beijing EU"
 }
 
 
 #开始测试回程路由
 backtracetest()
 {
-	mtrback "14.215.116.1" "广州电信（天翼云）"
-	mtrback "101.227.255.45" "上海电信（天翼云）"
-	mtrback "117.28.254.129" "厦门电信CN2"
-	mtrback "113.207.32.65" "重庆联通"
-	mtrback "183.192.160.3" "上海移动"
-	mtrback "202.205.6.30" "北京教育网"
+	mtrback "14.215.116.1" "Guangzhou CT"
+	mtrback "101.227.255.45" "Shanghai CT"
+	mtrback "117.28.254.129" "Xiemmen CN2"
+	mtrback "113.207.32.65" "Chongqing CU"
+	mtrback "183.192.160.3" "Shanghai CM"
+	mtrback "202.205.6.30" "Beijing EU"
 }
 
 
@@ -292,12 +292,12 @@ pingtest()
 #开始测试跳板ping
 gotoping()
 {
-	echo "===开始测试跳板ping===" | tee -a $logfilename
-	testping speedtest.tokyo.linode.com Linode日本
-	testping hnd-jp-ping.vultr.com Vultr日本
-	testping 192.157.214.6 Budgetvm洛杉矶
-	testping downloadtest.kdatacenter.com kdatacenter韩国SK
-	testping 210.92.18.1 星光韩国KT
+	echo "===jump ping===" | tee -a $logfilename
+	testping speedtest.tokyo.linode.com Linode JP
+	testping hnd-jp-ping.vultr.com Vultr JP
+	testping 192.157.214.6 Budgetvm LA
+	testping downloadtest.kdatacenter.com kdatacenter SK
+	testping 210.92.18.1  KT
 	echo "===跳板ping测试结束===" | tee -a $logfilename
 }
 
@@ -327,11 +327,11 @@ benchtest()
 
 	#Run unixbench
 	make
-	echo "===开始测试bench===" | tee -a ../${logfilename}
+	echo "===Test bench===" | tee -a ../${logfilename}
 	./Run
 	benchfile=`ls results/ | grep -v '\.'`
 	cat results/${benchfile} >> ../${logfilename}
-	echo "===bench测试结束===" | tee -a ../${logfilename}	
+	echo "===bench test done===" | tee -a ../${logfilename}	
 	cd ..
 	rm -rf UnixBench5.1.3.tgz UnixBench
 }
