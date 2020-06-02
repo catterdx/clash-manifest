@@ -25,20 +25,20 @@ cbw()
 chinabw()
 {
     next
-    echo "===开始测试国内带宽===">>${dir}/$logfilename
+    echo "=== CN bandwidth test ===">>${dir}/$logfilename
     printf "%-18s%-18s%-20s%-12s\n" " Node Name" "Upload Speed" "Download Speed" "Latency"
-    cbw '3633' '上海 电信'
-    cbw '27377' '北京 电信5G'
-    cbw '19076' '重庆 电信'
-    cbw '27594' '广州 电信5G'
-    cbw '21005' '上海 联通'
-    cbw '5145' '北京 联通'
-    cbw '31985' '重庆 联通'
-    cbw '26678' '广州 联通5G'
-    cbw '25637' '上海 移动5G'
-    cbw '25858' '北京 移动'
-    cbw '17584' '重庆 移动'
-    cbw '6611' '广东 移动'
-    echo -e "===国内带宽测试结束==\n\n">>${dir}/$logfilename
+    cbw '3633' 'Shanghai CT'
+    cbw '27377' 'Beijing CT 5G'
+    cbw '23844' 'Wuhan CT'
+    cbw '27594' 'Guangzhou CT 5G'
+    cbw '21005' 'Shanghai CU'
+    cbw '5145' 'Beijing CU'
+    cbw '5485' 'Wuhan CU'
+    cbw '26678' 'Guangzhou CU 5G'
+    cbw '25637' 'Shanghai CM动5G'
+    cbw '25858' 'Beijing CM'
+    cbw '26547' 'Wuhan CM'
+    cbw '6611' 'Guangzhou CM'
+    echo -e "=== Done ==\n\n">>${dir}/$logfilename
 }
 
