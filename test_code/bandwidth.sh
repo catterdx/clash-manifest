@@ -14,7 +14,7 @@ bandwidth()
 
 
 	#写入日志文件
-	echo "=== Download test ===">>${dir}/$logfilename
+	echo "=== Bandwidth test ===">>${dir}/$logfilename
 	echo "$bd">>${dir}/$logfilename
 	echo -e "=== Done ==\n\n">>${dir}/$logfilename
 }
