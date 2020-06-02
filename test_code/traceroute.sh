@@ -2,17 +2,19 @@ traceroute()
 {
 	next
 	wget -q --no-check-certificate https://raw.githubusercontent.com/91yun/91yuntest/master/test_code/traceroute.py  >/dev/null 2>&1
-	mtrgo "https://tools.ipip.net/traceroute.php?as=1&v=4&a=get&n=1&t=I&id=254&ip=${IP}" "1电信（天翼云）" "beijinct.log"
-    mtrgo "https://tools.ipip.net/traceroute.php?as=1&v=4&a=get&n=1&t=I&id=701&ip=${IP}" "江苏徐州电信" "xuzhouct.log"
-	mtrgo "https://tools.ipip.net/traceroute.php?as=1&v=4&a=get&n=1&t=I&id=274&ip=${IP}" "广州电信（天翼云）" "guangzhouct.log"
+        mtrgo "https://tools.ipip.net/traceroute.php?as=1&v=4&a=get&n=1&t=I&id=434&ip=${IP}" "Wuhan CT" "wuhanct.log"
+	mtrgo "https://tools.ipip.net/traceroute.php?as=1&v=4&a=get&n=1&t=I&id=254&ip=${IP}" "Beijing CT" "beijinct.log"
+	mtrgo "https://tools.ipip.net/traceroute.php?as=1&v=4&a=get&n=1&t=I&id=274&ip=${IP}" "Guangzhou CT" "guangzhouct.log"
+        mtrgo "https://tools.ipip.net/traceroute.php?as=1&v=4&a=get&n=1&t=I&id=274&ip=${IP}" "Shanghai CT" "shanghaict.log"
+	
+	mtrgo "https://tools.ipip.net/traceroute.php?as=1&v=4&a=get&n=1&t=I&id=7&ip=${IP}" "Tianjin CU" "shandongcu.log"
+	mtrgo "https://tools.ipip.net/traceroute.php?as=1&v=4&a=get&n=1&t=I&id=503&ip=${IP}" "Guangzhou CU" "guangdongcu.log"
+	mtrgo "https://tools.ipip.net/traceroute.php?as=1&v=4&a=get&n=1&t=I&id=700&ip=${IP}" "Jiangsu CU" "jiangsucu.log"
 
-	mtrgo "https://tools.ipip.net/traceroute.php?as=1&v=4&a=get&n=1&t=I&id=661&ip=${IP}" "山东枣庄联通" "shandongcu.log"
-	mtrgo "https://tools.ipip.net/traceroute.php?as=1&v=4&a=get&n=1&t=I&id=700&ip=${IP}" "江苏徐州联通" "jiangsucu.log"
-	mtrgo "https://tools.ipip.net/traceroute.php?as=1&v=4&a=get&n=1&t=I&id=503&ip=${IP}" "广东茂名联通" "guangdongcu.log"
 
-	mtrgo "https://tools.ipip.net/traceroute.php?as=1&v=4&a=get&n=1&t=I&id=774&ip=${IP}" "辽宁沈阳移动" "liaoningcm.log"
-	mtrgo "https://tools.ipip.net/traceroute.php?as=1&v=4&a=get&n=1&t=I&id=766&ip=${IP}" "江苏宿迁移动" "jiangsucm.log"
-	mtrgo "https://tools.ipip.net/traceroute.php?as=1&v=4&a=get&n=1&t=I&id=756&ip=${IP}" "广东茂名移动" "guangdongcm.log"
+	mtrgo "https://tools.ipip.net/traceroute.php?as=1&v=4&a=get&n=1&t=I&id=774&ip=${IP}" "Shenyang CM" "liaoningcm.log"
+	mtrgo "https://tools.ipip.net/traceroute.php?as=1&v=4&a=get&n=1&t=I&id=766&ip=${IP}" "Jiangsu CM" "jiangsucm.log"
+	mtrgo "https://tools.ipip.net/traceroute.php?as=1&v=4&a=get&n=1&t=I&id=756&ip=${IP}" "Guangdong CM" "guangdongcm.log"
 }
 curlinstall()
 {
@@ -36,7 +38,7 @@ ipiptraceroute()
     t=`echo "$t" | grep "parent.resp_once"`
     t=`echo "$t" | sed -r "s/<script>parent.resp_once\((.*)\)<\/script>/\1/g"`
 
-    echo "===测试 [$2] 到这台服务器的路由==="
+    echo "===Test [$2] route to this host ==="
     echo  "===start test traceroute from [$2]===" >>${dir}/$logfilename
     while read line || [ -n "$line" ]
     do
