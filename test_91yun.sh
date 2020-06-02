@@ -346,7 +346,14 @@ updatefile()
 
 simple_test()
 {
-pingtest
+{
+	prewget
+	systeminfo
+	bdtest
+	iotest
+	pingtest
+	updatefile
+}
 }
 
 normal_test()
