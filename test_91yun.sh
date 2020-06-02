@@ -346,12 +346,7 @@ updatefile()
 
 simple_test()
 {
-	prewget
-	systeminfo
-	bdtest
-	iotest
-	pingtest
-	updatefile
+pingtest
 }
 
 normal_test()
