@@ -35,7 +35,7 @@ chinabw()
     cbw '5145' 'Beijing CU'
     cbw '5485' 'Wuhan CU'
     cbw '26678' 'Guangzhou CU 5G'
-    cbw '25637' 'Shanghai CM动5G'
+    cbw '25637' 'Shanghai CM 5G'
     cbw '25858' 'Beijing CM'
     cbw '26547' 'Wuhan CM'
     cbw '6611' 'Guangzhou CM'
