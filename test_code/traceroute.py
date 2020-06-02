@@ -47,7 +47,7 @@ def mtrgo(mtrurl,nodename):
 		content=file.read()
 	result=re.finditer(r"<script>parent\.resp_once\('(\d+)', (\[[^\]]*\])\)</script>",content)
 	f=""
-	print("===测试 ["+nodename+"] 到这台服务器的路由===")
+	print("===Test ["+nodename+"] to local host ===")
 	f="===start test traceroute from ["+nodename+"]===\n"
 	for r in result:
 		js=json.loads(r.group(2))
