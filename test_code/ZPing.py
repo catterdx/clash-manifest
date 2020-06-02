@@ -75,7 +75,7 @@ D = {
 'Ningbo CM': 'ltetest3.139site.com',
 'Nanjin CT': '4gsuzhou1.speedtest.jsinfo.net',
 'Fuzhou CU': 'upload1.testspeed.kaopuyun.com',
-'Shanghai CT': 'speedtest1.online.sh.cn',
+'Shanghai CT': 'speedtest1.online.sh.cn', 
 'Aliyun CT': '106.11.75.189',
 'Shenzhen CU': 'speedtest.75510010.com', 
 'Guangdong CT': '113.96.7.34', 
