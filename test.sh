@@ -7,9 +7,9 @@ next() {
 }
 
 
-echo "服务器提供商（host provider）[default:Enter]"
+echo "（host provider）[default:Enter]"
 read hostp
-echo "开始测试中，会需要点时间，请稍后"
+echo "wait…………"
 
 
 _included_benchmarks=""
@@ -37,7 +37,7 @@ backtime=`date +%Y%m%d`
 logfilename="91yuntest.log"
 dir=`pwd`
 IP=$(curl -s myip.ipip.net | awk -F ' ' '{print $2}' | awk -F '：' '{print $2}')
-echo "====开始记录测试信息====">${dir}/$logfilename
+echo "==== collect information ====">${dir}/$logfilename
 
 #创建测试目录
 mkdir -p 91yuntest
@@ -68,7 +68,7 @@ if [[ $upfile == "y" ]]
 then
 	updatefile
 else
-	echo "测试结束，具体日志查看 91yuntest.log"
+	echo "log update to 91yuntest.log"
 fi
 #删除目录
 rm -rf ${dir}/91yuntest
