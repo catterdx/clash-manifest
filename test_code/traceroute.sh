@@ -1,7 +1,7 @@
 traceroute()
 {
 	next
-	wget -q --no-check-certificate https://raw.githubusercontent.com/catterdx/91test/master/test_code/traceroute.py  >/dev/null 2>&1
+	wget -q --no-check-certificate https://raw.githubusercontent.com/catterdx/91test/master/test_code/traceroute.sh  >/dev/null 2>&1
         mtrgo "https://tools.ipip.net/traceroute.php?as=1&v=4&a=get&n=1&t=I&id=434&ip=${IP}" "Wuhan CT" "wuhanct.log"
 	mtrgo "https://tools.ipip.net/traceroute.php?as=1&v=4&a=get&n=1&t=I&id=254&ip=${IP}" "Beijing CT" "beijinct.log"
 	mtrgo "https://tools.ipip.net/traceroute.php?as=1&v=4&a=get&n=1&t=I&id=274&ip=${IP}" "Guangzhou CT" "guangzhouct.log"
