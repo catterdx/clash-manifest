@@ -7,24 +7,21 @@ mtrinstall()
 }
 mtrback(){
     type mtr >/dev/null 2>&1 || mtrinstall 
-	echo "===测试 [$2] 的回程路由===" | tee -a ${dir}/$logfilename
+	echo "===Test [$2] backtrace route ===" | tee -a ${dir}/$logfilename
 	mtr -r --tcp -w -b -c 10 $1 | tee -a ${dir}/$logfilename
 	echo -e "\n\n"
-	echo -e "===回程 [$2] 路由测试结束===\n\n" >> ${dir}/$logfilename
+	echo -e "=== [$2] test done===\n\n" >> ${dir}/$logfilename
 
 }
 
 backtraceroute()
 {
 	next
-        mtrback "59.175.206.86" "武汉电信"
-	mtrback "111.48.26.136 " "武汉移动"
-	mtrback "113.57.249.2 " "武汉联通"
-	mtrback "115.231.219.181" "泉州电信"
-	mtrback "180.97.193.88" "江苏常州电信"
-        mtrback "115.231.219.159" "浙江绍兴电信"
-        mtrback "223.111.183.89" "江苏常州移动"
-        mtrback "112.84.104.172" "江苏徐州联通"
-	mtrback "103.36.209.82" "浙江杭州联通"
-	mtrback "218.98.26.190" "江苏常州联通"
+        mtrback "59.175.206.86" "Wuhan CT"
+	mtrback "111.48.26.136 " "Wuhan CM"
+	mtrback "113.57.249.2 " Wuhan CU"
+        mtrback "113.59.224.1" "Beijing CT"
+	mtrback "14.215.116.1" "Guangzhou CT"
+        mtrback "122.13.195.129" "Guangzhou CU"
+	mtrback "120.237.53.17" "Guangzhou CM"
 }
