@@ -46,8 +46,8 @@ def use_style(string, mode='', fore='', back=''):
     return '%s%s%s' % (style, string, end)
 
 D = {
-	'Xijiang CT ': '202.100.178.81',
-	'Heilongjiang CT ': '219.147.142.45',
+	'Xinjiang CT': '202.100.178.81',
+	'Heilongjiang CU': '202.97.224.69',
 	'Neimenggu CT': '222.74.1.200',
 	'Jilin CM': '202.98.0.68',
 	'Lhasa CM': 'speedtest1.xz.chinamobile.com', 
