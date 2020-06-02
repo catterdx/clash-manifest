@@ -15,15 +15,15 @@ benchtest()
 		exit 1
 	fi
 	tar xzf UnixBench5.1.3.tgz
-	cd ${dir}/91yuntest/UnixBench/
+	cd ${dir}/91test/UnixBench/
 
 	#Run unixbench
 	make > /dev/null 2>&1
-	echo "===开始测试bench===" >> ${dir}/${logfilename}
+	echo "=== bench test ===" >> ${dir}/${logfilename}
 	./Run
 	benchfile=`ls results/ | grep -v '\.'`
 	cat results/${benchfile} >> ${dir}/${logfilename}
-	echo "===bench测试结束===" >> ${dir}/${logfilename}	
+	echo "===bench done ===" >> ${dir}/${logfilename}	
 	cd ..
 	rm -rf UnixBench5.1.3.tgz UnixBench
 }
