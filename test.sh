@@ -40,6 +40,7 @@ IP=$(curl -s myip.ipip.net | awk -F ' ' '{print $2}' | awk -F '：' '{print $2}'
 echo "==== collect information ====">${dir}/$logfilename
 
 #创建测试目录
+rm -rf ${dir}/91yuntest
 mkdir -p 91yuntest
 cd 91yuntest
 
