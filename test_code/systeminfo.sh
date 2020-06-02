@@ -42,7 +42,7 @@ systeminfo()
     echo "OS                   : $opsy $arch $kern"
 
 	#写入日志文件
-	echo "===系统基本信息===">>${dir}/$logfilename
+	echo "=== System information ===">>${dir}/$logfilename
 	echo "CPU:$cname">>${dir}/$logfilename
 	echo "cores:$cores">>${dir}/$logfilename
 	echo "freq:$freq">>${dir}/$logfilename
