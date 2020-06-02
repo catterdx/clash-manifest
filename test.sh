@@ -40,9 +40,9 @@ IP=$(curl -s myip.ipip.net | awk -F ' ' '{print $2}' | awk -F '：' '{print $2}'
 echo "==== collect information ====">${dir}/$logfilename
 
 #创建测试目录
-rm -rf ${dir}/91yuntest
-mkdir -p 91yuntest
-cd 91yuntest
+rm -rf ${dir}/91test
+mkdir -p 91test
+cd 91test
 
 clear
 
@@ -53,7 +53,7 @@ arr=(${_included_benchmarks//,/ })
 for i in ${arr[@]}    
 do 
 	wget -q --no-check-certificate https://raw.githubusercontent.com/catterdx/91test/master/test_code/${i}.sh
-    . ${dir}/91yuntest/${i}.sh
+    . ${dir}/91test/${i}.sh
 	eval ${i}
 done    
 
