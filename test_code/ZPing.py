@@ -52,7 +52,7 @@ D = {
 	'Jilin CM': '202.98.0.68',
 	'Lhasa CM': 'speedtest1.xz.chinamobile.com', 
 	'Urumqi CU': '4g.xj169.com',
-	'liaoning CM': 'speedtest1.ln.chinamobile.com',
+	'Liaoning CT': '219.149.9.153',
 	'Shandong CU': '202.102.152.3',
 	'Beijing CT': 'st1.bjtelecom.net',
 	'Hebei CT': '123.183.181.249',
