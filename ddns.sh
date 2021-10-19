@@ -2,12 +2,12 @@
 #/*请先在CloudFlare上面解析一个你需要DDNS的记录,ip随便填写一个就行,否则将会报错*/
 #/*如果你要更换DDNS域名或者没在CloudFlare添加解析就运行了脚本,请先删除cloudflare_ddns.ids这个文件后重新运行*/
 #/*本地网卡获取ip是查看你网卡获取的ip,如果你连接的有路由器并且网卡获取的ip是内网的,请使用网络获取方式*/
-auth_email="foo@mail.com"    #你的CloudFlare注册账户邮箱
-auth_key="token"   #你的CloudFlare账户Globel ID
-zone_name="domain.com"     #你的主域名
-record_name="foo.domain.com"    #你需要的完整的DDNS解析域名
-record_type="AAAA"             #A或AAAA及ipv4或ipv6解析
-ip_index="local"     #internet 或 local,通过网络获取 或 本地网卡获取ip
+auth_email=""    #你的CloudFlare注册账户邮箱
+auth_key=""   #你的账户Globel API 可在https://dash.cloudflare.com/profile/api-tokens获取
+zone_name=""     #你的主域名如：domain.com
+record_name=""    #你需要的完整的DDNS解析域名如：foo.domain.com
+record_type="A"             #A或AAAA及ipv4或ipv6解析
+ip_index="internet"     #internet 或 local,通过网络获取 或 本地网卡获取ip
 #信息必填区
 ####################################################################################
 ipv4_api="ipv4.icanhazip.com"     #备用ipv4 api：ipv4.icanhazip.com，api.ipify.org
