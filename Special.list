@@ -15,6 +15,3 @@ DOMAIN-SUFFIX,mozilla.org,🇺🇲 US
 
 # SMS
 DOMAIN-SUFFIX,twilio.com
-
-# IP Info API
-DOMAIN-SUFFIX,ipinfo.io
