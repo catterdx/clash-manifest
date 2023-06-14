@@ -6,11 +6,11 @@ DOMAIN-SUFFIX,forefront.ai
 DOMAIN-KEYWORD,tenant-forefront
 
 # > Code
-DOMAIN-SUFFIX,freecodecamp.org,🇺🇲 US
-DOMAIN-SUFFIX,godbolt.org,🇺🇲 US
-DOMAIN-SUFFIX,replit.com,🇺🇲 US
-DOMAIN-SUFFIX,devdocs.io,🇺🇲 US
-DOMAIN-SUFFIX,mozilla.org,🇺🇲 US
+DOMAIN-SUFFIX,freecodecamp.org
+DOMAIN-SUFFIX,godbolt.org
+DOMAIN-SUFFIX,replit.com
+DOMAIN-SUFFIX,devdocs.io
+DOMAIN-SUFFIX,mozilla.org
 
 
 # SMS
