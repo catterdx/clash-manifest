@@ -9,8 +9,7 @@ DOMAIN-KEYWORD,tenant-forefront
 DOMAIN-SUFFIX,freecodecamp.org
 DOMAIN-SUFFIX,godbolt.org
 DOMAIN-SUFFIX,replit.com
-DOMAIN-SUFFIX,devdocs.io
-DOMAIN-SUFFIX,mozilla.org
+
 
 
 # SMS
@@ -18,3 +17,5 @@ DOMAIN-SUFFIX,twilio.com
 
 # Docs
 DOMAIN-SUFFIX,javainfo.io
+DOMAIN-SUFFIX,devdocs.io
+DOMAIN-SUFFIX,mozilla.org
