@@ -10,6 +10,8 @@ DOMAIN-SUFFIX,freecodecamp.org
 DOMAIN-SUFFIX,godbolt.org
 DOMAIN-SUFFIX,replit.com
 
+# > anki
+DOMAIN-SUFFIX,ankiweb.net
 
 
 # SMS
