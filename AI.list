@@ -21,5 +21,4 @@ DOMAIN-SUFFIX,bard.google.com
 DOMAIN-SUFFIX,apis.google.com
 DOMAIN-SUFFIX,googletagmamager.com
 DOMAIN-SUFFIX,gstatic.com
-# > Special
-DOMAIN-SUFFIX,m-team.cc
+DOMAIN-SUFFIX,googleapis.com
