@@ -1,5 +1,4 @@
-# > Special
-DOMAIN-SUFFIX,m-team.cc
+# > AI
 DOMAIN-SUFFIX,ai.com
 DOMAIN-SUFFIX,auth0.com
 DOMAIN-SUFFIX,challenges.cloudflare.com
@@ -16,3 +15,11 @@ DOMAIN-SUFFIX,sentry.io
 DOMAIN-SUFFIX,stripe.com
 DOMAIN-SUFFIX,oaistatic.com
 DOMAIN-SUFFIX,oaiusercontent.com
+DOMAIN-SUFFIX,chat.openai.com
+DOMAIN-SUFFIX,sentry.io
+DOMAIN-SUFFIX,bard.google.com
+DOMAIN-SUFFIX,apis.google.com
+DOMAIN-SUFFIX,googletagmamager.com
+DOMAIN-SUFFIX,gstatic.com
+# > Special
+DOMAIN-SUFFIX,m-team.cc
